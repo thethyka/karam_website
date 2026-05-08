@@ -1,100 +1,56 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from './assets/vite.svg';
-import heroImg from './assets/hero.png';
-import './App.css';
+import { useCallback, useMemo, useState } from 'react';
+import { WaveFooter } from './components/WaveFooter';
+import { Nav } from './components/Nav';
+import { Hero } from './components/Hero';
+import { FlagshipSection } from './components/FlagshipSection';
+import { OtherProjectsSection } from './components/OtherProjectsSection';
+import { Footer } from './components/Footer';
+import { Modal } from './components/Modal';
+import { profile } from './data/profile';
+import { flagshipProjects, otherProjects } from './data/projects';
+import type { AnyProject } from './types/project';
 
 function App() {
-	const [count, setCount] = useState(0);
+	const [selectedId, setSelectedId] = useState<string | null>(null);
+
+	const navLinks = useMemo(
+		() => [
+			{ label: 'GitHub', href: profile.links.github },
+			{ label: 'LinkedIn', href: profile.links.linkedin },
+			{ label: 'Resume', href: profile.links.resume },
+		],
+		[]
+	);
+
+	const projectsById = useMemo(() => {
+		const map = new Map<string, AnyProject>();
+		for (const p of flagshipProjects) map.set(p.id, p);
+		for (const p of otherProjects) map.set(p.id, p);
+		return map;
+	}, []);
+
+	const openProject = useCallback((id: string) => setSelectedId(id), []);
+	const closeProject = useCallback(() => setSelectedId(null), []);
+
+	const selectedProject = selectedId ? (projectsById.get(selectedId) ?? null) : null;
 
 	return (
 		<>
-			<section id="center">
-				<div className="hero">
-					<img src={heroImg} className="base" width="170" height="179" alt="" />
-					<img src={reactLogo} className="framework" alt="React logo" />
-					<img src={viteLogo} className="vite" alt="Vite logo" />
-				</div>
-				<div>
-					<h1>Get started</h1>
-					<p>
-						Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-					</p>
-				</div>
-				<button type="button" className="counter" onClick={() => setCount((count) => count + 1)}>
-					Count is {count}
-				</button>
-			</section>
+			<div className="relative z-10 mx-auto max-w-3xl px-5 pt-8 sm:px-8 sm:pt-10">
+				<Nav logo={`${profile.name.toLowerCase()}.dev`} links={navLinks} />
 
-			<div className="ticks"></div>
+				<Hero name={profile.name} initial={profile.initial} tagline={profile.tagline} about={profile.about} />
 
-			<section id="next-steps">
-				<div id="docs">
-					<svg className="icon" role="presentation" aria-hidden="true">
-						<use href="/icons.svg#documentation-icon"></use>
-					</svg>
-					<h2>Documentation</h2>
-					<p>Your questions, answered</p>
-					<ul>
-						<li>
-							<a href="https://vite.dev/" target="_blank">
-								<img className="logo" src={viteLogo} alt="" />
-								Explore Vite
-							</a>
-						</li>
-						<li>
-							<a href="https://react.dev/" target="_blank">
-								<img className="button-icon" src={reactLogo} alt="" />
-								Learn more
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div id="social">
-					<svg className="icon" role="presentation" aria-hidden="true">
-						<use href="/icons.svg#social-icon"></use>
-					</svg>
-					<h2>Connect with us</h2>
-					<p>Join the Vite community</p>
-					<ul>
-						<li>
-							<a href="https://github.com/vitejs/vite" target="_blank">
-								<svg className="button-icon" role="presentation" aria-hidden="true">
-									<use href="/icons.svg#github-icon"></use>
-								</svg>
-								GitHub
-							</a>
-						</li>
-						<li>
-							<a href="https://chat.vite.dev/" target="_blank">
-								<svg className="button-icon" role="presentation" aria-hidden="true">
-									<use href="/icons.svg#discord-icon"></use>
-								</svg>
-								Discord
-							</a>
-						</li>
-						<li>
-							<a href="https://x.com/vite_js" target="_blank">
-								<svg className="button-icon" role="presentation" aria-hidden="true">
-									<use href="/icons.svg#x-icon"></use>
-								</svg>
-								X.com
-							</a>
-						</li>
-						<li>
-							<a href="https://bsky.app/profile/vite.dev" target="_blank">
-								<svg className="button-icon" role="presentation" aria-hidden="true">
-									<use href="/icons.svg#bluesky-icon"></use>
-								</svg>
-								Bluesky
-							</a>
-						</li>
-					</ul>
-				</div>
-			</section>
+				<FlagshipSection projects={flagshipProjects} onOpen={openProject} />
 
-			<div className="ticks"></div>
-			<section id="spacer"></section>
+				<OtherProjectsSection projects={otherProjects} onOpen={openProject} />
+
+				<Footer name={profile.name} links={navLinks} />
+			</div>
+
+			<WaveFooter />
+
+			<Modal project={selectedProject} onClose={closeProject} />
 		</>
 	);
 }
