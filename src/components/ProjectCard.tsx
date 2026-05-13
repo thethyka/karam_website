@@ -15,12 +15,18 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
 		>
 			<div className="flex items-baseline justify-between gap-2">
 				<h4 className="m-0 text-base font-medium text-walnut">{project.title}</h4>
-				<span className="text-xs text-muted">{project.year}</span>
+				<span
+					className="text-base leading-none"
+					aria-label={project.medal === 'gold' ? 'Gold medal — winner' : 'Silver medal — runner-up'}
+					title={project.medal === 'gold' ? 'Winner' : 'Runner-up'}
+				>
+					{project.medal === 'gold' ? '🥇' : '🥈'}
+				</span>
 			</div>
 			<p className="mt-1 mb-3 line-clamp-2 text-xs leading-relaxed text-muted">{project.description}</p>
 			<div className="flex flex-wrap gap-1.5">
-				<Tag variant="terra">{project.event}</Tag>
-				{project.tags.map((tag) => (
+				<Tag variant="sage">{project.event}</Tag>
+				{project.tags.slice(0, 3).map((tag) => (
 					<Tag key={tag} variant="terra">
 						{tag}
 					</Tag>

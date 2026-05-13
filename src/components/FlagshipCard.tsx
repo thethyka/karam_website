@@ -25,7 +25,7 @@ export function FlagshipCard({ project, onOpen }: FlagshipCardProps) {
 			<p className="mt-2 mb-4 text-sm leading-relaxed text-[#4A5E36]">{project.description}</p>
 
 			<div className="flex flex-wrap items-center gap-2">
-				{project.tags.map((tag) => (
+				{project.tags.slice(0, 3).map((tag) => (
 					<Tag key={tag} variant="sage">
 						{tag}
 					</Tag>

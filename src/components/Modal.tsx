@@ -46,7 +46,7 @@ export function Modal({ project, onClose }: ModalProps) {
 			}}
 			className="fixed inset-0 z-50 flex items-center justify-center bg-walnut/60 p-6 backdrop-blur-sm"
 		>
-			<div className="relative w-full max-w-lg rounded-3xl bg-cream p-7 shadow-xl">
+			<div className="relative w-full max-w-3xl rounded-3xl bg-cream p-7 shadow-xl">
 				<button
 					ref={closeButtonRef}
 					type="button"
@@ -77,12 +77,12 @@ export function Modal({ project, onClose }: ModalProps) {
 				</div>
 
 				<h3 id="modal-title" className="m-0 text-xl font-medium text-walnut">
-					{project.title}
+					{project.longTitle}
 				</h3>
-				<p className="mt-2 mb-4 text-sm leading-relaxed text-muted">{project.description}</p>
+				<p className="mt-2 mb-4 text-sm leading-relaxed text-muted">{project.longDescription}</p>
 
 				<div className="mb-5 flex flex-wrap gap-2">
-					{isOther && <Tag variant="terra">{project.event}</Tag>}
+					{isOther && <Tag variant="sage">{project.event}</Tag>}
 					<Tag variant="walnut">{project.year}</Tag>
 					{project.tags.map((tag) => (
 						<Tag key={tag} variant="walnut">
@@ -92,6 +92,17 @@ export function Modal({ project, onClose }: ModalProps) {
 				</div>
 
 				<div className="flex flex-wrap gap-3">
+					{isOther && project.awardUrl && (
+						<a
+							href={project.awardUrl}
+							target="_blank"
+							rel="noreferrer"
+							className="inline-flex items-center gap-2 rounded-full border border-walnut/15 bg-white px-5 py-2.5 text-sm font-medium text-walnut transition-colors hover:bg-walnut/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-walnut/40"
+						>
+							<span aria-hidden="true">🏆</span>
+							Read about the win
+						</a>
+					)}
 					{project.url && (
 						<a
 							href={project.url}

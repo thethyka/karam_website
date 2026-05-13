@@ -37,7 +37,7 @@ function App() {
 	return (
 		<>
 			<div className="relative z-10 mx-auto max-w-3xl px-5 pt-8 sm:px-8 sm:pt-10">
-				<Nav logo={`${profile.name.toLowerCase()}.dev`} links={navLinks} />
+				<Nav logo={"karamthethy.au"} links={navLinks} />
 
 				<Hero name={profile.name} initial={profile.initial} tagline={profile.tagline} about={profile.about} />
 
@@ -45,10 +45,12 @@ function App() {
 
 				<OtherProjectsSection projects={otherProjects} onOpen={openProject} />
 
-				<Footer name={profile.name} links={navLinks} />
+				<Footer name={profile.name} />
 			</div>
 
-			<WaveFooter />
+			<div className="pointer-events-none relative z-0 -mt-28">
+				<WaveFooter />
+			</div>
 
 			<Modal project={selectedProject} onClose={closeProject} />
 		</>

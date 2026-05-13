@@ -1,3 +1,5 @@
+import resumeUrl from './resume.pdf?url';
+
 export interface Profile {
 	name: string;
 	initial: string;
@@ -13,12 +15,11 @@ export interface Profile {
 export const profile: Profile = {
 	name: 'Karam',
 	initial: 'K',
-	tagline: 'Software engineer in Melbourne. I build things that are useful, fast, and (hopefully) a bit delightful.',
-	about:
-		'Currently looking for new opportunities. I love working across the stack — from clean APIs to interfaces people actually enjoy using.',
+	tagline: 'Software engineer.',
+	about: 'Currently looking for new opportunities.',
 	links: {
-		github: 'https://github.com/',
-		linkedin: 'https://www.linkedin.com/',
-		resume: '/resume.pdf',
+		github: 'https://github.com/thethyka',
+		linkedin: 'https://www.linkedin.com/in/karam-thethy',
+		resume: resumeUrl,
 	},
 };
