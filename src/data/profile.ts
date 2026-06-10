@@ -12,7 +12,7 @@ export interface Profile {
 export const profile: Profile = {
 	name: 'Karam',
 	initial: 'KT',
-	tagline: 'Software engineer',
+	tagline: 'Software engineer.',
 	about: 'Scroll for evidence.',
 	links: {
 		github: 'https://github.com/thethyka',
