@@ -16,9 +16,7 @@ export function Hero({ name, initial, tagline, about }: HeroProps) {
 					{initial}
 				</div>
 				<div>
-					<h1 className="m-0 text-3xl font-medium text-walnut sm:text-4xl">
-						Hey, I&apos;m {name} <span aria-hidden="true">👋</span>
-					</h1>
+					<h1 className="m-0 text-3xl font-medium text-walnut sm:text-4xl">{name}</h1>
 					<p className="mt-1 max-w-prose text-sm leading-relaxed text-muted sm:text-base">{tagline}</p>
 				</div>
 			</div>

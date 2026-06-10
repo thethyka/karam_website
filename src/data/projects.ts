@@ -27,7 +27,7 @@ export const flagshipProjects: FlagshipProject[] = [
 		id: 'odyssey-rov-hmi',
 		title: 'Odyssey ROV HMI',
 		longTitle: 'Odyssey ROV HMI',
-		url: 'https://github.com/karamhaddad/odyssey-rov-hmi',
+		url: 'https://thethyka.github.io/Odyssey-ROV-Interface/',
 		description: 'Full-stack Human-Machine Interface for piloting a simulated deep-sea ROV to 2,000m.',
 		longDescription:
 			'A full-stack HMI for piloting a simulated deep-sea ROV, built from scratch as a self-directed engineering challenge. The operator navigates to 2,000m, deploys a robotic arm to collect a specimen, and returns safely while managing live telemetry. Designed around real HMI principles from safety-critical industries: monochrome palette with colour reserved for alerts, and UI structured around the Perception → Comprehension → Projection model. Dual-protocol architecture: WebSocket streams live telemetry at 2 Hz from a custom Python simulation engine, while gRPC handles historical mission log queries.',
@@ -49,6 +49,20 @@ export const otherProjects: OtherProject[] = [
 		event: 'WAPOL Hackathon',
 		year: 2024,
 		medal: 'gold',
+		url: 'https://thethyka.github.io/WAPOL/',
+	},
+	{
+		id: 'fuelfinder',
+		title: 'FuelFinder',
+		longTitle: 'FuelFinder: Route-Aware Fuel Cost Optimiser',
+		description: 'Finds the cheapest fuel stop along your WA drive, factoring in detour cost and loyalty discounts.',
+		longDescription:
+			'Finds the cheapest fuel stop along your drive in WA. Not just by price, but by true total cost: fuel burned reaching the detour is factored into the model. Pulls live petrol prices from the WA Government FuelWatch RSS feed, applies loyalty card discounts (RAC, Woolworths Rewards), and injects the optimal station as a real Mapbox navigation waypoint so it becomes an actual turn-by-turn stop.',
+		tags: ['Python', 'Django', 'Pandas', 'JavaScript', 'Mapbox'],
+		event: 'UWA Hackathon',
+		year: 2023,
+		medal: 'gold',
+		url: 'https://thethyka.github.io/FuelFinder/',
 	},
 	{
 		id: 'panopticon',
@@ -61,6 +75,7 @@ export const otherProjects: OtherProject[] = [
 		event: 'Samsung Solve for Tomorrow',
 		year: 2023,
 		medal: 'gold',
+		url: 'https://panopticon.cjnb.net/',
 		awardUrl: 'https://studentedge.org/article/solve-for-tomorrow-winners-2023',
 	},
 	{
@@ -74,6 +89,7 @@ export const otherProjects: OtherProject[] = [
 		event: 'Build Together 2024',
 		year: 2024,
 		medal: 'silver',
+		url: 'https://build-together-2024.pages.dev/',
 	},
 	{
 		id: 'agroport',
@@ -86,6 +102,7 @@ export const otherProjects: OtherProject[] = [
 		event: 'Agtech Hackathon',
 		year: 2023,
 		medal: 'gold',
+		url: 'https://thethyka.github.io/Agroport-Logistics/',
 	},
 	{
 		id: 'weatherwise',
@@ -98,18 +115,7 @@ export const otherProjects: OtherProject[] = [
 		event: 'DFES Hackathon',
 		year: 2024,
 		medal: 'gold',
-	},
-	{
-		id: 'fuelfinder',
-		title: 'FuelFinder',
-		longTitle: 'FuelFinder: Route-Aware Fuel Cost Optimiser',
-		description: 'Finds the cheapest fuel stop along your WA drive, factoring in detour cost and loyalty discounts.',
-		longDescription:
-			'Finds the cheapest fuel stop along your drive in WA. Not just by price, but by true total cost: fuel burned reaching the detour is factored into the model. Pulls live petrol prices from the WA Government FuelWatch RSS feed, applies loyalty card discounts (RAC, Woolworths Rewards), and injects the optimal station as a real Mapbox navigation waypoint so it becomes an actual turn-by-turn stop.',
-		tags: ['Python', 'Django', 'Pandas', 'JavaScript', 'Mapbox'],
-		event: 'UWA Hackathon',
-		year: 2023,
-		medal: 'gold',
+		url: 'https://thethyka.github.io/WeatherWise/',
 	},
 	{
 		id: 'solargifts',
@@ -122,6 +128,7 @@ export const otherProjects: OtherProject[] = [
 		event: 'Social Impact Hackathon',
 		year: 2023,
 		medal: 'gold',
+		url: 'https://thethyka.github.io/SolarGifts/',
 	},
 	{
 		id: 'schoolcrashanalysis',

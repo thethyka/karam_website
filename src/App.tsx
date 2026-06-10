@@ -17,7 +17,6 @@ function App() {
 		() => [
 			{ label: 'GitHub', href: profile.links.github },
 			{ label: 'LinkedIn', href: profile.links.linkedin },
-			{ label: 'Resume', href: profile.links.resume },
 		],
 		[]
 	);
@@ -37,7 +36,7 @@ function App() {
 	return (
 		<>
 			<div className="relative z-10 mx-auto max-w-3xl px-5 pt-8 sm:px-8 sm:pt-10">
-				<Nav logo={"karamthethy.au"} links={navLinks} />
+				<Nav logo={'karamthethy.au'} links={navLinks} />
 
 				<Hero name={profile.name} initial={profile.initial} tagline={profile.tagline} about={profile.about} />
 
