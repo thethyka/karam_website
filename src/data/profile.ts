@@ -13,7 +13,7 @@ export const profile: Profile = {
 	name: 'Karam',
 	initial: 'KT',
 	tagline: 'Software engineer.',
-	about: 'Scroll for evidence.',
+	about: 'Scroll to see what I've been up to.',
 	links: {
 		github: 'https://github.com/thethyka',
 		linkedin: 'https://www.linkedin.com/in/karam-thethy',
