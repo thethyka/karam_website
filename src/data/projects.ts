@@ -64,7 +64,7 @@ export const otherProjects: OtherProject[] = [
 		event: 'UWA Hackathon',
 		year: 2023,
 		medal: 'gold',
-		url: 'https://thethyka.github.io/FuelFinder/',
+		url: 'https://fuel-finder-gamma.vercel.app',
 		repoUrl: 'https://github.com/thethyka/FuelFinder',
 	},
 	{
