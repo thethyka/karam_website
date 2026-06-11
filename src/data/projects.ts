@@ -28,6 +28,7 @@ export const flagshipProjects: FlagshipProject[] = [
 		title: 'Odyssey ROV HMI',
 		longTitle: 'Odyssey ROV HMI',
 		url: 'https://thethyka.github.io/Odyssey-ROV-Interface/',
+		repoUrl: 'https://github.com/thethyka/Odyssey-ROV-Interface',
 		description: 'Full-stack Human-Machine Interface for piloting a simulated deep-sea ROV to 2,000m.',
 		longDescription:
 			'A full-stack HMI for piloting a simulated deep-sea ROV, built from scratch as a self-directed engineering challenge. The operator navigates to 2,000m, deploys a robotic arm to collect a specimen, and returns safely while managing live telemetry. Designed around real HMI principles from safety-critical industries: monochrome palette with colour reserved for alerts, and UI structured around the Perception → Comprehension → Projection model. Dual-protocol architecture: WebSocket streams live telemetry at 2 Hz from a custom Python simulation engine, while gRPC handles historical mission log queries.',
@@ -50,6 +51,7 @@ export const otherProjects: OtherProject[] = [
 		year: 2024,
 		medal: 'gold',
 		url: 'https://thethyka.github.io/WAPOL/',
+		repoUrl: 'https://github.com/thethyka/WAPOL',
 	},
 	{
 		id: 'fuelfinder',
@@ -63,6 +65,7 @@ export const otherProjects: OtherProject[] = [
 		year: 2023,
 		medal: 'gold',
 		url: 'https://thethyka.github.io/FuelFinder/',
+		repoUrl: 'https://github.com/thethyka/FuelFinder',
 	},
 	{
 		id: 'panopticon',
@@ -76,6 +79,7 @@ export const otherProjects: OtherProject[] = [
 		year: 2023,
 		medal: 'gold',
 		url: 'https://panopticon.cjnb.net/',
+		repoUrl: 'https://github.com/Operation-Rob/solve-for-tomorrow-panopticon',
 		awardUrl: 'https://studentedge.org/article/solve-for-tomorrow-winners-2023',
 	},
 	{
@@ -90,6 +94,7 @@ export const otherProjects: OtherProject[] = [
 		year: 2024,
 		medal: 'silver',
 		url: 'https://build-together-2024.pages.dev/',
+		repoUrl: 'https://github.com/thethyka/build-together-2024',
 	},
 	{
 		id: 'agroport',
@@ -103,6 +108,7 @@ export const otherProjects: OtherProject[] = [
 		year: 2023,
 		medal: 'gold',
 		url: 'https://thethyka.github.io/Agroport-Logistics/',
+		repoUrl: 'https://github.com/thethyka/Agroport-Logistics',
 	},
 	{
 		id: 'weatherwise',
@@ -116,6 +122,7 @@ export const otherProjects: OtherProject[] = [
 		year: 2024,
 		medal: 'gold',
 		url: 'https://thethyka.github.io/WeatherWise/',
+		repoUrl: 'https://github.com/thethyka/WeatherWise',
 	},
 	{
 		id: 'solargifts',
@@ -129,6 +136,7 @@ export const otherProjects: OtherProject[] = [
 		year: 2023,
 		medal: 'gold',
 		url: 'https://thethyka.github.io/SolarGifts/',
+		repoUrl: 'https://github.com/thethyka/SolarGifts',
 	},
 	{
 		id: 'schoolcrashanalysis',
@@ -141,5 +149,6 @@ export const otherProjects: OtherProject[] = [
 		event: 'GovHack',
 		year: 2023,
 		medal: 'gold',
+		repoUrl: 'https://github.com/thethyka/SchoolCrashAnalysis',
 	},
 ];
